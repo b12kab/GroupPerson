@@ -21,6 +21,8 @@ namespace GroupPerson.ViewModel
 
         private void CreateList()
         {
+            ListOfPeople = new List<PersonList>();
+
             var sList = new PersonList()
             {
                 new Person() { FirstName = "Sally", LastName = "Sampson" },
@@ -28,27 +30,30 @@ namespace GroupPerson.ViewModel
                 new Person() { FirstName = "John", LastName = "Smith" }
             };
             sList.Heading = "S";
+            ListOfPeople.Add(sList);
 
             var dList = new PersonList()
             {
                 new Person() { FirstName = "Jane", LastName = "Doe" }
             };
             dList.Heading = "D";
+            ListOfPeople.Add(dList);
 
             var jList = new PersonList()
             {
                 new Person() { FirstName = "Billy", LastName = "Joel" }
             };
             jList.Heading = "J";
+            ListOfPeople.Add(jList);
 
-            var list = new List<PersonList>()
-            {
-                sList,
-                dList,
-                jList
-            };
+            //var list = new List<PersonList>()
+            //{
+            //    sList,
+            //    dList,
+            //    jList
+            //};
 
-            ListOfPeople = list;
+            //ListOfPeople = list;
         }
 
         private List<PersonList> _listOfPeople;
@@ -63,7 +68,8 @@ namespace GroupPerson.ViewModel
         }
 
         private Person _person;
-        public Person SelectedPerson { get { return _person; }
+        public Person SelectedPerson { 
+            get { return _person; }
             set
             {
                 _person = value;

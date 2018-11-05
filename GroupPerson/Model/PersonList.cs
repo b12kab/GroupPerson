@@ -9,6 +9,6 @@ namespace GroupPerson.Model
     public class PersonList : List<Person>
     {
         public string Heading { get; set; }
-        public List<Person> Persons => this;
+        public List<Person> Persons { get; set; }
     }
 }
