@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Based on-->
+<!-- http://xamarinhelp.com/xamarin-forms-listview-grouping/-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GroupPerson.View.ViewDisplay">
+    <ListView ItemsSource="{Binding ListOfPeople}"
+              GroupDisplayBinding="{Binding Heading}"
+              SelectedItem="{Binding SelectedPerson, Mode=TwoWay}"
+              IsGroupingEnabled="true">
+        
+<!--    <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <Label Text="{Binding Heading}" />
+            </ViewCell>
+        </DataTemplate>
+    </ListView.GroupHeaderTemplate>
+-->
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+               <Label Text="{Binding DisplayName}" />
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView></ContentPage>

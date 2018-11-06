@@ -21,37 +21,41 @@ namespace GroupPerson.ViewModel
 
         private void CreateList()
         {
-            ListOfPeople = new List<PersonList>();
-
             var sList = new PersonList()
+            //var sPerson = new List<Person>
             {
                 new Person() { FirstName = "Sally", LastName = "Sampson" },
                 new Person() { FirstName = "Taylor", LastName = "Swift" },
                 new Person() { FirstName = "John", LastName = "Smith" }
             };
+            //var sList = new PersonList() { sPerson };
+            //sList.Persons = sPerson;
             sList.Heading = "S";
-            ListOfPeople.Add(sList);
 
             var dList = new PersonList()
+            //var dPerson = new List<Person>
             {
                 new Person() { FirstName = "Jane", LastName = "Doe" }
             };
+            //var dList = new PersonList(dPerson);
+            //dList.Persons = dPerson;
             dList.Heading = "D";
-            ListOfPeople.Add(dList);
 
             var jList = new PersonList()
+            //var jPerson = new List<Person>
             {
                 new Person() { FirstName = "Billy", LastName = "Joel" }
             };
+            //var jList = new PersonList(jPerson);
+            //jList.Persons = jPerson;
             jList.Heading = "J";
-            ListOfPeople.Add(jList);
 
-            //var list = new List<PersonList>()
-            //{
-            //    sList,
-            //    dList,
-            //    jList
-            //};
+            ListOfPeople = new List<PersonList>()
+            {
+                dList,
+                jList,
+                sList
+            };
 
             //ListOfPeople = list;
         }
