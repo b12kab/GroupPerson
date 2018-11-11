@@ -21,33 +21,41 @@ namespace GroupPerson.ViewModel
 
         private void CreateList()
         {
-            var sList = new PersonList()
+            Person one = new Person() { FirstName = "Sally", LastName = "Sampson" };
+            Person two = new Person() { FirstName = "Taylor", LastName = "Swift" };
+            Person three = new Person() { FirstName = "John", LastName = "Smith" };
+            var sPerson = new List<Person>();
+            sPerson.Add(one);
+            sPerson.Add(two);
+            sPerson.Add(three);
+
+            var sList = new PersonList();
             //var sPerson = new List<Person>
-            {
-                new Person() { FirstName = "Sally", LastName = "Sampson" },
-                new Person() { FirstName = "Taylor", LastName = "Swift" },
-                new Person() { FirstName = "John", LastName = "Smith" }
-            };
-            //var sList = new PersonList() { sPerson };
-            //sList.Persons = sPerson;
+            //{
+            //    new Person() { FirstName = "Sally", LastName = "Sampson" },
+            //    new Person() { FirstName = "Taylor", LastName = "Swift" },
+            //    new Person() { FirstName = "John", LastName = "Smith" }
+            //};
+            //sList.Persons.AddRange(sPerson);
+            //sList.Persons.Remove(three);
+            sList.AddRange(sPerson);
             sList.Heading = "S";
 
+            Person four = new Person() { FirstName = "Jane", LastName = "Doe" };
             var dList = new PersonList()
-            //var dPerson = new List<Person>
             {
-                new Person() { FirstName = "Jane", LastName = "Doe" }
+                //new Person() { FirstName = "Billy", LastName = "Joel" }
+                four
             };
-            //var dList = new PersonList(dPerson);
-            //dList.Persons = dPerson;
             dList.Heading = "D";
 
-            var jList = new PersonList()
-            //var jPerson = new List<Person>
-            {
-                new Person() { FirstName = "Billy", LastName = "Joel" }
-            };
+            Person five = new Person() { FirstName = "Billy", LastName = "Joel" };
+            var jList = new PersonList();
+            //{
+            //    new Person() { FirstName = "Billy", LastName = "Joel" }
+            //};
             //var jList = new PersonList(jPerson);
-            //jList.Persons = jPerson;
+            jList.Add(five);
             jList.Heading = "J";
 
             ListOfPeople = new List<PersonList>()
@@ -56,8 +64,6 @@ namespace GroupPerson.ViewModel
                 jList,
                 sList
             };
-
-            //ListOfPeople = list;
         }
 
         private List<PersonList> _listOfPeople;

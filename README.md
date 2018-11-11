@@ -8,4 +8,6 @@ V1 is pretty much like the original article, except that it used a ViewModel, re
 
 V1.1 was an experiment to see how this actually was working and hopefully be able to dynamically create this list, not just as a part of the array on the instantiation of the PersonList object. If I could delete this, I would :)
 
-V2 is where I found that only on the instantiation of the PersonList object is where the GroupDisplayBinding worked. All my other experimentation had either the group with the letter and no data or no data at all on the ListView. I commented out the PersonList's Person property, to be sure that others were able to get this point only on instantiation would this work.
+V2 is where I determined that only on the instantiation of the PersonList object is where the GroupDisplayBinding worked.
+
+V3 I found that I had a mistake in V2 in why it wouldn't compile. Under further investigation, I found that properly adding the list or individual entries of People objects, it worked just fine. The updated ViewModel shows different ways of handing this.
